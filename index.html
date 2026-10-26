@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>War of Creation — T1 slime test build</title>
+  <script type="module" crossorigin src="/assets/index-Pta3tvLL.js"></script>
+  <link rel="stylesheet" crossorigin href="/assets/index-BdRpGvwC.css">
+</head>
+<body>
+<header>
+  <h1>War of Creation <small>T1 slime test build · v0.1 · all numbers are draft test knobs, not canon</small></h1>
+</header>
+<main>
+  <section id="left">
+    <div id="tools">
+      <button data-tool="dig" class="on">⛏ Dig</button>
+      <button data-tool="lair">▦ Paint Lair</button>
+      <button data-tool="seed">● Seed Pure Slime</button>
+      <button data-tool="infuse" class="nc" title="NOT CANON — infusion is user-defined. Disabled.">✦ Infuse <em>NOT CANON · off</em></button>
+    </div>
+    <canvas id="board" width="512" height="512"></canvas>
+    <div id="controls">
+      <button id="raid">⚔ Send scout raid</button>
+      <button id="pause">⏸ Pause</button>
+      <button id="speed">×1</button>
+      <button id="verify">⟲ Replay check</button>
+      <button id="reset">Reset</button>
+    </div>
+    <p id="toast"></p>
+  </section>
+  <section id="right">
+    <div class="card">
+      <h2>Raw Pure mana</h2>
+      <div id="manabar"><div id="manafill"></div><span id="manatext"></span></div>
+      <p id="eco"></p>
+      <p class="hint">Mana is collected automatically and scales with ecosystem health (housed slimes). Kills give no mana; a kill leaves a body that slimes clean up.</p>
+    </div>
+    <div class="card"><h2>Dungeon</h2><p id="dungeon"></p></div>
+    <div class="card"><h2>Raids</h2><ol id="raids"></ol></div>
+    <div class="card"><h2>Log</h2><pre id="log"></pre></div>
+    <div class="card nc-card"><h2>NOT CANON knobs (user defines) — all OFF</h2><ul id="nc"></ul></div>
+  </section>
+</main>
+</body>
+</html>
