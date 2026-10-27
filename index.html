@@ -4,12 +4,12 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>War of Creation — T1 slime test build</title>
-  <script type="module" crossorigin src="./assets/index-BR6sZ6sA.js"></script>
-  <link rel="stylesheet" crossorigin href="./assets/index-dpmBV-Zs.css">
+  <script type="module" crossorigin src="./assets/index-C8tnxZSN.js"></script>
+  <link rel="stylesheet" crossorigin href="./assets/index-DpjF_L6e.css">
 </head>
 <body>
 <header>
-  <h1>War of Creation <small>T1 slime test build · v0.2 · 24×24 · all numbers are draft test knobs, not canon</small></h1>
+  <h1>War of Creation <small>T1 slime test build · v0.3 · 32×32 · all numbers are draft test knobs, not canon</small></h1>
 </header>
 <main>
   <section id="left">
@@ -20,7 +20,7 @@
       <button data-tool="inspect">👁 Inspect</button>
       <button data-tool="infuse" class="nc" title="NOT CANON — infusion is user-defined. Disabled.">✦ Infuse <em>NOT CANON · off</em></button>
     </div>
-    <canvas id="board" width="768" height="768"></canvas>
+    <canvas id="board" width="896" height="896"></canvas>
     <div id="controls">
       <button id="raid">⚔ Send scout raid</button>
       <button id="pause">⏸ Pause</button>
@@ -33,13 +33,13 @@
   <section id="right">
     <div class="card" id="inspect-card">
       <h2>Inspect</h2>
-      <div id="inspect"><p class="hint">Tap a slime, scout, body, or plant. Short cinematic lines — draft numbers only.</p></div>
+      <div id="inspect"><p class="hint">Tap a slime, rat, ant, body, plant, or droppings. Draft numbers only.</p></div>
     </div>
     <div class="card">
       <h2>Raw Pure mana</h2>
       <div id="manabar"><div id="manafill"></div><span id="manatext"></span></div>
       <p id="eco"></p>
-      <p class="hint">Mana is collected automatically and scales with ecosystem health (housed slimes + draft flora). Kills give no mana; a kill leaves a body that slimes clean up.</p>
+      <p class="hint">Mana auto-scales with ecosystem health (housed slimes + flora density). Food loop: flora→slimes→rats; bodies→ants; droppings fertilize plants. Kills give no mana.</p>
     </div>
     <div class="card"><h2>Dungeon</h2><p id="dungeon"></p></div>
     <div class="card"><h2>Raids</h2><ol id="raids"></ol></div>
