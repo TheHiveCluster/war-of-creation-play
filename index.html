@@ -2,14 +2,14 @@
 <html lang="en">
 <head>
 <meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
 <title>War of Creation — T1 slime test build</title>
-  <script type="module" crossorigin src="./assets/index-DCYAyXnV.js"></script>
-  <link rel="stylesheet" crossorigin href="./assets/index-DpjF_L6e.css">
+  <script type="module" crossorigin src="./assets/index-CNe0KKni.js"></script>
+  <link rel="stylesheet" crossorigin href="./assets/index-Dt21v6xy.css">
 </head>
 <body>
 <header>
-  <h1>War of Creation <small>T1 slime test build · v0.4 · 32×32 · all numbers are draft test knobs, not canon</small></h1>
+  <h1>War of Creation <small>T1 slime test build · v0.5 · 32×32 · all numbers are draft test knobs, not canon</small></h1>
 </header>
 <main>
   <section id="left">
@@ -17,10 +17,19 @@
       <button data-tool="dig" class="on">⛏ Dig</button>
       <button data-tool="lair">▦ Paint Lair</button>
       <button data-tool="seed">● Seed Pure Slime</button>
+      <button data-tool="refill" title="Spend Pure mana to refill density/flora in a zone (draft)">💧 Refill area</button>
       <button data-tool="inspect">👁 Inspect</button>
       <button data-tool="infuse" class="nc" title="NOT CANON — infusion is user-defined. Disabled.">✦ Infuse <em>NOT CANON · off</em></button>
     </div>
-    <canvas id="board" width="896" height="896"></canvas>
+    <div id="board-wrap">
+      <canvas id="board" width="896" height="896"></canvas>
+    </div>
+    <div id="zoom-bar">
+      <button type="button" id="zoom-out" title="Zoom out">−</button>
+      <button type="button" id="zoom-reset" title="Reset zoom">100%</button>
+      <button type="button" id="zoom-in" title="Zoom in">+</button>
+      <span id="zoom-hint" class="hint">Scroll / pinch to zoom · drag with two fingers or Space+drag to pan</span>
+    </div>
     <div id="controls">
       <button id="raid">⚔ Send scout raid</button>
       <button id="pause">⏸ Pause</button>
@@ -33,13 +42,13 @@
   <section id="right">
     <div class="card" id="inspect-card">
       <h2>Inspect</h2>
-      <div id="inspect"><p class="hint">Tap a slime, rat, ant, body, plant, droppings, or dense ground. Draft numbers only.</p></div>
+      <div id="inspect"><p class="hint">Tap a slime, rat, ant/egg, body, plant, mana stone, zone, droppings, or dense ground. Draft numbers only.</p></div>
     </div>
     <div class="card">
       <h2>Raw Pure mana</h2>
       <div id="manabar"><div id="manafill"></div><span id="manatext"></span></div>
       <p id="eco"></p>
-      <p class="hint">Mana auto-scales with ecosystem health (housed slimes + flora density). Slimes fill energy from grazing/bodies/dense patches and energy-split when full; rich cells can spawn Pure slimes nearby. Food loop: flora→slimes→rats; bodies→ants; droppings fertilize. Kills give no mana.</p>
+      <p class="hint">Mana auto-scales with ecosystem health (housed slimes + flora density + mana zones). Queen ants eat slime/rat → eggs → workers dig tunnels and leave mana-soil; enough soil rolls an environmental mana zone (Earth/Water/Fire/Wind/Light/Dark — not player infusion). Refill spends Pure to restore a patch. No lane. Kills give no mana.</p>
     </div>
     <div class="card"><h2>Dungeon</h2><p id="dungeon"></p></div>
     <div class="card"><h2>Raids</h2><ol id="raids"></ol></div>
